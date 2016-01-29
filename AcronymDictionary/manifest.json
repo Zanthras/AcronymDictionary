@@ -3,7 +3,7 @@
 
   "name": "Acronym Dictionary",
   "description": "This extension expands any found acronyms into the full form. Eventual consideration to to display an info panel instead",
-  "version": "0.0.2",
+  "version": "0.2.0",
   "permissions": [
     "activeTab"
   ],

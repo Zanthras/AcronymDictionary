@@ -3,14 +3,13 @@
 
   "name": "Acronym Dictionary",
   "description": "This extension expands any found acronyms into the full form. Eventual consideration to to display an info panel instead",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "permissions": [
     "activeTab"
   ],
   "content_scripts": [
     {
       "js": ["ADacronyms.js", "ADpopup.js"], "matches": ["<all_urls>"],
-//      "js": ["ADacronyms.js", "ADpopup.js"], "matches": ["http://localhost/*"],
       "css" : ["ADpopup.css"]
     }
   ]

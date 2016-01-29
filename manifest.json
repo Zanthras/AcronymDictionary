@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Acronym Dictionary",
+  "description": "This extension expands any found acronyms into the full form. Eventual consideration to to display an info panel instead",
+  "version": "0.0.1",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+//      "js": ["popup.js"], "matches": ["<all_urls>"]
+      "js": ["Acronyms.js", "popup.js"], "matches": ["http://localhost/*"]
+    }
+  ]
+}

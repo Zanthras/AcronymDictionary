@@ -35,10 +35,11 @@ function encapsulateAcronym(textNode) {
         }
     }
     if (replaced) {
-        var temp = document.createElement("div");
-        temp.innerHTML = textNode.data;
-        textNode.parentNode.insertBefore(temp, textNode.parentNode.firstChild);
-        textNode.parentNode.removeChild(textNode);
+        //var temp = document.createElement("div");
+        //temp.innerHTML = textNode.data;
+        //textNode.parentNode.insertBefore(temp, textNode.parentNode.firstChild);
+        textNode.parentNode.innerHTML = textNode.data;
+        //textNode.parentNode.removeChild(textNode);
     }
 }
 

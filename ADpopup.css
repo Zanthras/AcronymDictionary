@@ -2,16 +2,31 @@
     display: inline;
     font-style: italic;
     text-decoration: underline;
+    position: absolute;
+    /*width: auto;*/
 }
 
 .ADINFO {
     display: none;
+    font-style: normal;
 }
 
-.AD:hover>.ADINFO{
+/*.ADINFO {*/
+    /*display: block;*/
+    /*position: absolute;*/
+    /*float: left;*/
+    /*background: #FFFFFF;*/
+    /*font-style: normal;*/
+    /*opacity: 1;*/
+/*}*/
+
+.AD:hover>.ADINFO {
     display: block;
     position: absolute;
     background: #FFFFFF;
     font-style: normal;
     opacity: 1;
+    top: 1em;
+    width: 20em;
+    z-index: 1000000;
 }

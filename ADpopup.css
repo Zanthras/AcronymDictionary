@@ -1,0 +1,17 @@
+.AD {
+    display: inline;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.ADINFO {
+    display: none;
+}
+
+.AD:hover>.ADINFO{
+    display: block;
+    position: absolute;
+    background: #FFFFFF;
+    font-style: normal;
+    opacity: 1;
+}

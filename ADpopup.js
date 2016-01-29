@@ -28,7 +28,7 @@ function encapsulateAcronym(textNode) {
         textNode.data = textNode.data.replace(new RegExp(key, 'g'), function (token) {
             replaced = true;
             replacedCount += 1;
-            return "<div style='display:inline'>" + AcronymLookup[key][0] + "</div>"
+            return createInfoPanel(key)
         });
         if (replacedCount) {
             console.log("replaced " + key + " " + replacedCount + " times");
@@ -42,9 +42,8 @@ function encapsulateAcronym(textNode) {
     }
 }
 
-function displayInfoPanel(key) {
-    var panel = document.createElement("div");
-    panel.innerHTML = AcronymLookup[key][1]
+function createInfoPanel(key) {
+    return '<div class="AD"><div class="ADINFO">' + AcronymLookup[key][0] + '<br>' + AcronymLookup[key][1] + '</div>' + key + '</div>';
 }
 
 

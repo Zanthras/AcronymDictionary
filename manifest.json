@@ -9,8 +9,9 @@
   ],
   "content_scripts": [
     {
-//      "js": ["popup.js"], "matches": ["<all_urls>"]
-      "js": ["Acronyms.js", "popup.js"], "matches": ["http://localhost/*"]
+      "js": ["ADacronyms.js", "ADpopup.js"], "matches": ["<all_urls>"],
+//      "js": ["ADacronyms.js", "ADpopup.js"], "matches": ["http://localhost/*"],
+      "css" : ["ADpopup.css"]
     }
   ]
 }

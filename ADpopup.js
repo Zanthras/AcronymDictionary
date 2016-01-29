@@ -1,3 +1,18 @@
+//AcronymDictionary - For automatic expansion of acronyms.
+//Copyright (C) 2016  Joel Whitcomb
+//
+//This program is free software: you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation, either version 3 of the License, or
+//(at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 function traverseChildNodes(node) {
@@ -25,7 +40,8 @@ function encapsulateAcronym(textNode) {
 
     for (var key in AcronymLookup) {
         var replacedCount = 0;
-        textNode.data = textNode.data.replace(new RegExp(key, 'g'), function (token) {
+        var search = new RegExp(key, 'g');
+        textNode.data = textNode.data.replace(search, function () {
             replaced = true;
             replacedCount += 1;
             return createInfoPanel(key)
@@ -35,16 +51,13 @@ function encapsulateAcronym(textNode) {
         }
     }
     if (replaced) {
-        //var temp = document.createElement("div");
-        //temp.innerHTML = textNode.data;
-        //textNode.parentNode.insertBefore(temp, textNode.parentNode.firstChild);
         textNode.parentNode.innerHTML = textNode.data;
-        //textNode.parentNode.removeChild(textNode);
     }
 }
 
 function createInfoPanel(key) {
-    return '<div class="AD"><div class="ADINFO">' + AcronymLookup[key][0] + '<br>' + AcronymLookup[key][1] + '</div>' + key + '</div>';
+
+    return '<div class="AD"><div class="ADposition"><div class="ADINFO">' + AcronymLookup[key][0] + '<br>' + AcronymLookup[key][1] + '</div></div>' + key + '</div>';
 }
 
 

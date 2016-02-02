@@ -41,11 +41,11 @@ function encapsulateAcronym(textNode) {
 
     for (var key in AcronymLookup) {
         var replacedCount = 0;
-        var search = new RegExp(key, 'g');
-        text = text.replace(search, function () {
+        var search_regex = new RegExp("([^a-zA-Z]|^)(" + key + ")([^a-zA-Z]|$)", 'g');
+        text = text.replace(search_regex, function () {
             replaced = true;
             replacedCount += 1;
-            return createInfoPanel(key)
+            return createInfoPanel(search_regex, text)
         });
         if (replacedCount) {
             console.log("replaced " + key + " " + replacedCount + " times");
@@ -59,9 +59,16 @@ function encapsulateAcronym(textNode) {
     }
 }
 
-function createInfoPanel(key) {
+function createInfoPanel(search_regex, text) {
 
-    return '<div class="AD"><div class="ADposition"><div class="ADINFO">' + AcronymLookup[key][0] + '<br>' + AcronymLookup[key][1] + '</div></div>' + key + '</div>';
+    //oh.. god... im doing the same regex search again.... why oh why
+    var results = search_regex.exec(text);
+
+    var key = results[2];
+    var pre = results[1];
+    var post = results[3];
+
+    return pre + '<div class="AD"><div class="ADposition"><div class="ADINFO">' + AcronymLookup[key][0] + '<br>' + AcronymLookup[key][1] + '</div></div>' + key + '</div>' + post;
 }
 
 

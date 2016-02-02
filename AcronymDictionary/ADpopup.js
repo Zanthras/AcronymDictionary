@@ -37,11 +37,12 @@ function traverseChildNodes(node) {
 function encapsulateAcronym(textNode) {
 
     var replaced = false;
+    var text = textNode.data;
 
     for (var key in AcronymLookup) {
         var replacedCount = 0;
         var search = new RegExp(key, 'g');
-        textNode.data = textNode.data.replace(search, function () {
+        text = text.replace(search, function () {
             replaced = true;
             replacedCount += 1;
             return createInfoPanel(key)
@@ -51,7 +52,10 @@ function encapsulateAcronym(textNode) {
         }
     }
     if (replaced) {
-        textNode.parentNode.innerHTML = textNode.data;
+        var newtext = document.createElement('div');
+        newtext.className = "ADParent";
+        newtext.innerHTML = text;
+        textNode.parentNode.replaceChild(newtext, textNode);
     }
 }
 

@@ -4,6 +4,10 @@
     text-decoration: underline;
 }
 
+.ADParent {
+    display: inline;
+}
+
 .ADposition {
     display: inline;
     font-style: italic;
@@ -16,12 +20,20 @@
     font-style: normal;
 }
 
-.AD:hover * .ADINFO {
+
+.AD:hover > .ADposition > .ADINFO {
     display: block;
     position: absolute;
     background: #FFFFFF;
+    background-color: rgba(255, 255, 255, 1);
     font-style: normal;
     opacity: 1;
     top: 1em;
-    width: 20em;
+    width: 30em;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.2);
+    z-index: 100;
+    margin: -2px 2px 2px -2px;
+    border-radius: 1em;
+    border-width: 1px;
+    padding: .5em;
 }

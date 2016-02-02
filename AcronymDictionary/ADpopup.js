@@ -48,14 +48,14 @@ function encapsulateAcronym(textNode) {
             return createInfoPanel(search_regex, text)
         });
         if (replacedCount) {
-            console.log("replaced " + key + " " + replacedCount + " times");
+            console.log("replaced " + key + " " + replacedCount + " times")
         }
     }
     if (replaced) {
         var newtext = document.createElement('div');
         newtext.className = "ADParent";
         newtext.innerHTML = text;
-        textNode.parentNode.replaceChild(newtext, textNode);
+        textNode.parentNode.replaceChild(newtext, textNode)
     }
 }
 
@@ -68,7 +68,18 @@ function createInfoPanel(search_regex, text) {
     var pre = results[1];
     var post = results[3];
 
-    return pre + '<div class="AD"><div class="ADposition"><div class="ADINFO">' + AcronymLookup[key][0] + '<br>' + AcronymLookup[key][1] + '</div></div>' + key + '</div>' + post;
+    var expanded = AcronymLookup[key][0];
+    var detailed = AcronymLookup[key][1];
+
+    var box = "";
+
+    if (detailed != undefined) {
+        box = expanded + '<br>' + detailed
+    } else {
+        box = expanded
+    }
+
+    return pre + '<div class="AD"><div class="ADposition"><div class="ADINFO">' + box + '</div></div>' + key + '</div>' + post
 }
 
 

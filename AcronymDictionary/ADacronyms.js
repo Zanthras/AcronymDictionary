@@ -18,8 +18,8 @@ var AcronymLookup = {
     // general
     "AOS": ["Acquisition of Signal", "a phrase used during launch when communication with the vehicle is re-established after Loss of Signal"],
     "ACS": ["Attitude Control System", "synonymous with Reaction Control System"],
-    "ACES": ["Advanced Cryogenic Evolved Stage - a LOX/LH2 upper stage being developed for ULA's Vulcan launch vehicle"],
-    "ARM": ["Asteroid Redirect Mission - a planned NASA mission to redirect an asteroid to lunar orbit for rendezvous with an Orion spacecraft"],
+    "ACES": ["Advanced Cryogenic Evolved Stage", "A LOX/LH2 upper stage being developed for ULA's Vulcan launch vehicle"],
+    "ARM": ["Asteroid Redirect Mission", "A planned NASA mission to redirect an asteroid to lunar orbit for rendezvous with an Orion spacecraft"],
     "ASDS": ["Autonomous Spaceport Drone Ship", "SpaceX's custom-built landing barge"],
     "BEAM": ["Bigelow Expandable Activities Module", "an inflatable module designed by Bigelow Aerospace that will be brought up to the ISS aboard CRS-8."],
     "BFR": ["Big Falcon Rocket", "a generic term for the next SpaceX rocket, which will be larger than Falcon Heavy"],
